@@ -26,7 +26,7 @@ def read_input():
         for c in range(9):
             colour = input(f'What colour from 1, 2, 3, 4, 5, 6, 7, 8, 9, is in row {r+1} and column {c+1}? ')
             while colour not in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
-                colour = input(f'What colour from 1, 2, 3, 4, 5, 6, 7, 8, 9, is in row {r+1} and column {c+1}? ')
+                colour = input(f'What colour from 1, 2, 3, 4, 5, 6, 7, 8, 9, is in row {r+1} and column {c+1}? Check again. ')
             row.append(int(colour))
         ifend = input('If you made a mistake and would like to start from beginning, press 0. To continue input as usual, press 1: ')
         if ifend == '0':
