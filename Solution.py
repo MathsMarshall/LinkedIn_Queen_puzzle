@@ -1,4 +1,3 @@
-import sys
 import time
 
 def visualise_input_so_far(grid):
