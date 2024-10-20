@@ -156,6 +156,7 @@ def play_game(colour = 1):
     for position in positions:
         if DFS(position, colour_dict)[0]:
             return DFS(position, colour_dict)[1]
+    return path()                                   # Prevent None type return for the playgame() function in case of no solution.
 
 def visualise_solution(visited):
     out = ''
