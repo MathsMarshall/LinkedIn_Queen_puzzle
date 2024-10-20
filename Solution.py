@@ -11,14 +11,16 @@ def read_input():
     def visualise_input_so_far(grid):
         rows = len(grid)
         columns = len(grid[0])
+        shutter = len(str(RIGHT_BOUNDARY))
+        shutter += 1
         out = ''
         for i in range(RIGHT_BOUNDARY):
             row = '\n'
             for j in range(RIGHT_BOUNDARY):
                 if (i < rows) and (j < columns):
-                    row += str(grid[i][j]) + ' '
+                    row += str(grid[i][j]) + ' '*(shutter - len(str(grid[i][j])))
                 else:
-                    row += '_ '
+                    row += '_' + ' '*(shutter - 1)
             out = out + row
         print(out)
     
@@ -160,13 +162,14 @@ def play_game(colour = 1):
 
 def visualise_solution(visited):
     out = ''
+    shutter = len(str(RIGHT_BOUNDARY))
     for i in range(RIGHT_BOUNDARY):
         row = '\n'
         for j in range(RIGHT_BOUNDARY):
             if (i, j) in visited:
-                row += 'Q '
+                row += 'Q' + ' '*(shutter)
             else:
-                row += str(position_dict[(i, j)]) + ' '
+                row += str(position_dict[(i, j)]) + ' '*(shutter + 1 - len(str(position_dict[(i, j)])))
         out = out + row
     print(out)
 
